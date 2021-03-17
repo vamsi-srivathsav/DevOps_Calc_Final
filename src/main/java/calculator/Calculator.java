@@ -1,11 +1,13 @@
 
+package calculator;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class Calculator {
 
+    private static final Logger logger = LogManager.getLogger(Calculator.class);
 
     public Calculator() {
 
@@ -121,6 +123,11 @@ public class Calculator {
 
         return result;
     }
-
+    public double fact(double num) {
+        double facto = 1;
+        for(int i = 1; i <= num; ++i)
+        { facto *= i;   }
+        return  facto;
+    }
 
 }
