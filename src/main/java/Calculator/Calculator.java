@@ -70,29 +70,41 @@ public class Calculator {
     }
 
     public double findFactorial(double num) {
+        logger.info("[FACTORIAL of] - " + num);
+        double result;
 
-        double result = fact(num);
+        double prod = 1;
+        for(int i = 1; i <= num; ++i)
+        {
+            prod *= i;
+        }
+        result = prod;
 
+        logger.info("[RESULT : FACTORIAL] - " + result);
         return result;
     }
 
 
 
     public double findSquareRoot(double num) {
-
+        logger.info("[SQUARE ROOT] - " + num);
         double result = Math.sqrt(num);
-
+        logger.info("[RESULT - SQUARE ROOT] - " + result);
         return result;
     }
 
 
     public double findPower(double num1, double num2) {
+        logger.info("[POWER - " + num1 + " RAISED TO] " + num2);
         double result = Math.pow(num1,num2);
+        logger.info("[RESULT - POWER] - " + result);
         return result;
     }
 
     public double findNaturalLog(double num) {
         double result = 0;
+        logger.info("[NATURAL LOG] - " + num);
+
         try {
 
             if (num <0 ) {
@@ -105,13 +117,9 @@ public class Calculator {
         } catch (ArithmeticException error) {
             System.out.println("[EXCEPTION - LOG] - Cannot find log of negative numbers " + error.getLocalizedMessage());
         }
+        logger.info("[RESULT - NATURAL LOG] - " + result);
+
         return result;
-    }
-    public double fact(double num) {
-        double facto = 1;
-        for(int i = 1; i <= num; ++i)
-        { facto *= i;   }
-        return  facto;
     }
 
 
